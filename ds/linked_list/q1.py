@@ -1,4 +1,3 @@
-
 # LL: Find Middle Node ( ** Interview Question)
 # Implement the find_middle_node method for the LinkedList class.
 
@@ -24,6 +23,9 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
+
+    def __repr__(self) -> str:
+        return f'Node(value={self.value})'
         
 
 class LinkedList:
@@ -42,15 +44,16 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
         return True
-        
 
-    # WRITE FIND_MIDDLE_NODE METHOD HERE #
-    #                                    #
-    #                                    #
-    #                                    #
-    #                                    #
-    ######################################
+    def find_middle_node(self):
+        slow_ponter = self.head
+        fast_pointer = self.head
 
+        while fast_pointer is not None and fast_pointer.next is not None:
+            slow_ponter = slow_ponter.next
+            fast_pointer = fast_pointer.next.next
+
+        return slow_ponter
 
 
 
