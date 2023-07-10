@@ -54,7 +54,7 @@ class LinkedList:
         return temp
     
     def prepend(self, value):  #O(1)
-        """Prepend an item to the linked list. Insert at the beggining"""
+        """Prepend an item to the linked list. Insert at the beginning"""
         new_node = Node(value)
 
         if self.length == 0:
